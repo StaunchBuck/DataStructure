@@ -1,7 +1,8 @@
 package src.leetcode.home.tech.problem.linkedList;
 
-import home.tech.problem.ListNode;
-import home.tech.problem.MyLinkedNode;
+
+import src.leetcode.home.tech.problem.ListNode;
+import src.leetcode.home.tech.problem.MyLinkedNode;
 
 public class ReorderList {
 	public static ListNode newHead = null;

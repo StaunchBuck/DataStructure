@@ -30,6 +30,7 @@ public class LevelOrderTraversal {
 			}
 			result.add(local);
 			start = end;
+			end = queue.size();
 		}
 
 		return result;
