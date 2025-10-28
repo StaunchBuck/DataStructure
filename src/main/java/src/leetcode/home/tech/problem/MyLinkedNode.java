@@ -2,7 +2,7 @@ package src.leetcode.home.tech.problem;
 
 public class MyLinkedNode {
 
-	protected static ListNode head = null;
+	protected ListNode head = null;
 	
 	public MyLinkedNode(Integer... values) {
 		head = build(values,0,values.length);

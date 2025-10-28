@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-class DeleetAndEarn {
+class DeleteAndEarn {
     // This problem is similar to House Robber
     public static void main(String[] args) {
         int[] nums = new int[]{2,2,3,3,3,4,6,7,9};
-        System.out.println(new DeleetAndEarn().deleteAndEarn(nums));
+        System.out.println(new DeleteAndEarn().deleteAndEarn(nums));
     }
 
     public int deleteAndEarn(int[] nums) {
