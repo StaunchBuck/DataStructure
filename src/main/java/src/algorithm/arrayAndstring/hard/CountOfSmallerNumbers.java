@@ -8,17 +8,18 @@ public class CountOfSmallerNumbers {
 
     public static void main(String[] args) {
         CountOfSmallerNumbers obj = new CountOfSmallerNumbers();
-        System.out.println(obj.countSmaller(new int[]{0,2,1}));
+        System.out.println(obj.countSmaller(new int[]{5,2,6,1}));
     }
 
     public List<Integer> countSmaller(int[] nums) {
 
         Integer[] res = new Integer[nums.length];
+        Arrays.fill(res,0);
         int start = 0;
         int end = nums.length-1;
         int[] merged = mergeSort(start,end,nums,res);
-        Arrays.toString(merged);
-        Arrays.toString(res);
+        // Arrays.toString(merged);
+        // Arrays.toString(res);
         return Arrays.asList(res);
     }
 
@@ -26,9 +27,7 @@ public class CountOfSmallerNumbers {
         if(start==end)
             return new int[]{start};
         int mid = (start+end)/2;
-        int[] left = mergeSort(start,mid,nums,res);
-        int[] right = mergeSort(mid+1,end,nums,res);
-        return merge(left,right,nums,res);
+        return merge(mergeSort(start,mid,nums,res),mergeSort(mid+1,end,nums,res),nums,res);
     }
 
     public int[] merge(int[] left,int[] right,int[] nums,Integer[] res){
@@ -36,18 +35,22 @@ public class CountOfSmallerNumbers {
         int l = 0;
         int r = 0;
         int pos = 0;
+        int incr = 0;
         while(l<left.length && r<right.length){
             if(nums[right[r]] < nums[left[l]]){
-                for(int i=l;i<left.length;i++){
-                    res[left[i]]+=1;
-                }
+                // for(int i=l;i<left.length;i++){
+                //     res[left[i]]+=1;
+                // }
+                incr++;
                 merged[pos++] = right[r++];
             }else{
+                res[left[l]] +=incr;
                 merged[pos++] = left[l++];
             }
         }
         if(l<left.length){
             while(l<left.length){
+                res[left[l]] +=incr;
                 merged[pos++] = left[l++];
             }
         }
