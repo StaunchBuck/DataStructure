@@ -1,6 +1,7 @@
 package src;
 
 import lombok.AllArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
@@ -18,7 +19,11 @@ public class RoughConcepts {
             System.out.println(task.profit + " "+task.t1+" "+task.index);
         });
 
+        System.out.println(StringUtils.rightPad("1234567",9,'0'));
+
     }
+
+
 }
 
 @AllArgsConstructor
